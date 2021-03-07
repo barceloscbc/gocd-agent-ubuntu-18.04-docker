@@ -3,7 +3,7 @@ FROM gocd/gocd-agent-ubuntu-18.04:${GOCD_VERSION}
 ARG DOCKERGID=999
 
 USER root
-VOLUME ["/var/run/docker.sock"]
+
 RUN \
   groupadd -g ${DOCKERGID} docker && \ 
   adduser go docker && \
