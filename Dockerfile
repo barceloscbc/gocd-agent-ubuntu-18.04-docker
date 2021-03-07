@@ -9,7 +9,10 @@ RUN \
   adduser go docker && \
   curl --fail --location --silent --show-error "https://download.docker.com/linux/static/stable/x86_64/docker-19.03.5.tgz" | tar zxO docker/docker > /usr/bin/docker && \
   chmod a+x /usr/bin/docker
-
+  
+RUN apt-get update && \
+      apt-get -y install sudo
+      
 RUN \
   apt-get update -qqy \
   && apt-get install -qqy --no-install-recommends \
